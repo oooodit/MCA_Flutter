@@ -1,0 +1,49 @@
+login.dart
+
+- only statefull widget works
+- To use Multiple Widget we use Layout :
+Row, Column, ListView (childrens of row/column), GridView
+- To create validation - wrap arount widget:Form. Pass a FormKey in it. 
+FormKey has property Validator - below decoration validator: (value) { if(value==null || value.isEmpty){return "Please Enter Username"}
+						return null; }
+
+- call it in the submit button
+- keyboardType: TextInputType.number - will open number keyboard while entering data
+
+
+- if(!RegExp(pattern).hasMatch(value)){return "Enter Valid Email"} is used to validate pattern (email validation) 
+
+//Variables to be passed in the TextformField to print / set in the variable
+
+var formkey = GlobalKey().currentState
+var usernameController = TextEditingController();
+var passwordController = TextEditingController();
+
+@override
+
+
+
+return Scaffold(
+	appBar:AppBar(
+		title:Text("Login Page")
+		)
+	body: Padding(padding: const EdgeInsets.only(Top:2,Right:4,Left:8,Bottom:16), 
+		child: Column(
+			Children:[
+				TextFormField(decoration: 
+						InputDecoration(hindText:"Enter Username Placeholder",
+						prefixicon: Icons.(),	
+						LabelText:"Floating Placeholder",border:Outline())
+				 
+				
+				SizeBox(height:16.0),
+
+				ElivatedButton(onPressed:(){
+				if(formkey.currentState!.validate())
+				print("Username: ${userNameController.text()")
+				 TextFormField(obsecureText:true, obsecure
+				
+						decoration: prefixicon: Icons.(),
+						InputDecoration(hindText:"Enter Password Placeholder",
+						LabelText:"Floating Placeholder",border:Outline())
+				]
